@@ -53,7 +53,7 @@ void *MapPointer (soff_entry *soffs, int soffs_len, DWORD in_ptr, int *section)
       if (section != NULL)
         *section = i;
       if (soffs[i].off)
-        return soffs[i].off + in_ptr;
+        return (void*)((intptr_t)soffs[i].off + (intptr_t)in_ptr);
     }
   return NULL;
 }

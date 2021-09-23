@@ -233,7 +233,7 @@ Try `ntldd --help' for more information\n", argv[i]);
     sp.path = realloc(sp.path, sp.count * sizeof(char*));
     for (i = 0; i < files_count; ++i)
     {
-      char buff[MAX_PATH] = {};
+      char buff[MAX_PATH] = {0};
       strcpy(buff, argv[files_start+i]);
       char* p = strrchr(buff, '\\');
       if (!p)

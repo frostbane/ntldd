@@ -1,5 +1,7 @@
 cmake_minimum_required (VERSION 3.16)
-project(ntldd)
+project(ntldd
+        VERSION 0.2.0
+        DESCRIPTION "small utility will do the one thing that most people want from ldd")
 
 #---------------------------------------------------------------------
 
@@ -25,6 +27,8 @@ endif ()
 
 add_executable(ntldd libntldd.c
                      ntldd.c)
+
+configure_file ("${CMAKE_CURRENT_SOURCE_DIR}/libntldd.h.in" "${CMAKE_CURRENT_SOURCE_DIR}/libntldd.h")
 
 add_definitions("-D__USE_MINGW_ANSI_STDIO=1"
                 "-D_WIN32_WINNT=0x501")

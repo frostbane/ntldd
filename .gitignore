@@ -1,0 +1,4 @@
+libntldd.h
+obj/*
+var/*
+cmake-build-*
